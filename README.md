@@ -1,6 +1,6 @@
 # honeycomb
 
-## Overview
+## Project Overview
 
 The **honeycomb** is a context-aware system that enables multiple AI agents to collaborate on a variety of tasks, such as writing, coding, research, and more. Unlike traditional AI tools focused on single tasks, this system allows a swarm of agents to work simultaneously, sharing a common context to provide more cohesive and efficient results. The initial version is designed as a minimal viable product (MVP) with a focus on simplicity, scalability, and future extensibility.
 
