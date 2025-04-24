@@ -1,74 +1,97 @@
-# honeycomb
+# Honeycomb AI Swarm
 
-## Project Overview
+A multi-agent AI system that enables collaborative task execution with a shared context database. Honeycomb allows specialized AI agents to work together, share knowledge, and tackle a variety of tasks efficiently.
 
-The **honeycomb** is a context-aware system that enables multiple AI agents to collaborate on a variety of tasks, such as writing, coding, research, and more. Unlike traditional AI tools focused on single tasks, this system allows a swarm of agents to work simultaneously, sharing a common context to provide more cohesive and efficient results. The initial version is designed as a minimal viable product (MVP) with a focus on simplicity, scalability, and future extensibility.
+## Features
 
-### Features
+- **Multiple Specialized Agents**: Writing, coding, research, command execution, and context summarization
+- **Shared Context Database**: All agents share and reference the same knowledge base
+- **Task Assignment**: Tasks are automatically routed to the most suitable agent
+- **Task Queue**: Manage and track tasks through their lifecycle
+- **Context Persistence**: Knowledge and decisions are preserved across tasks
+- **Terminal UI**: Simple, clean interface for interaction
 
-- **Multi-Agent Collaboration**: Specialized agents handle different tasks (e.g., writing, coding, creative idea gen) and can work concurrently.
-- **Shared Context**: A local database (ContextDB) maintains a shared context across all agents, ensuring they stay aligned.
-- **Task Queue**: A simple task queue manages concurrent task processing.
-- **Command-Line Interface (CLI)**: Users can easily interact with the system via a CLI to add, view, and manage tasks.
-- **Modular Design**: The system is built to be extended with more agents, tasks, and features over time.
+## Setup
 
-### Installation
+1. Clone this repository:
+```
+git clone https://github.com/yourusername/honeycomb.git
+cd honeycomb
+```
 
-1. **Clone the Repository**:
+2. Install required packages:
+```
+pip install requests
+```
 
-   ```bash
-   git clone https://github.com/your-repo/ai-assistant-swarm.git
-   cd ai-assistant-swarm
-   ```
+3. Set up your API keys as environment variables:
+```
+# For macOS/Linux
+export OPENAI_API_KEY="your_openai_api_key"
+export ANTHROPIC_API_KEY="your_anthropic_api_key"  # Optional
 
-2. **Install Dependencies**:
+# For Windows
+set OPENAI_API_KEY=your_openai_api_key
+set ANTHROPIC_API_KEY=your_anthropic_api_key  # Optional
+```
 
-   - Ensure you have Python 3.x installed.
-   - Install required packages:
+## Usage
 
-     ```bash
-     pip install requests
-     ```
+Run the main application:
+```
+python honeycomb.py
+```
 
-3. **Set Up the Database**:
+The terminal interface will guide you through the following options:
 
-   - The system uses a local SQLite database (`contextdb.sqlite`), which is automatically created when you run the script for the first time.
+1. **List Agents**: View all registered AI agents
+2. **List Tasks**: View all tasks and their statuses
+3. **Add Task**: Create a new task and assign it to an agent
+4. **Process Pending Tasks**: Execute all pending tasks
+5. **View Latest Context**: See the most recent context entries
+6. **Generate Daily Summary**: Create a summary of recent context
+7. **Exit**: Close the application
 
-4. **Run the System**:
+### Task Types
 
-   - Start the CLI by running:
+- **writing**: Create written content with specified tone and length
+- **coding**: Generate code in various languages, optionally save to file
+- **research**: Research a topic and provide a comprehensive summary
+- **command**: Execute shell commands and capture output
+- **context_summary**: Summarize recent context entries for other agents
 
-     ```bash
-     python ai_swarm.py
-     ```
+## Architecture
 
-### Usage
+- **ContextDB**: Simple JSON-based database for storing tasks, context, and agent information
+- **Agent**: Base class for all specialized agents
+- **TaskQueue**: Manages task creation and status updates
+- **TaskCoordinator**: Assigns tasks to appropriate agents and manages execution
 
-Once the system is running, you can interact with it via the CLI using the following commands:
+## Custom Parameters
 
-- `add <type> <description>`: Add a new task.
-  - Example: `add write Summarize the benefits of AI`
-  - Supported types: `write`, `code`, `research`
-- `view`: List all tasks and their statuses.
-- `review <task_id> [approve]`: Review a task's result. Use `approve` to add the result to the shared context.
-  - Example: `review 1 approve`
-- `context`: View the current shared context.
-- `exit`: Quit the CLI.
+Each task type accepts specific parameters:
 
-### Configuration
+- **writing**:
+  - `tone`: Casual, professional, formal, etc.
+  - `length`: Short, medium, long
+  
+- **coding**:
+  - `language`: Python, JavaScript, etc.
+  - `file_path`: Path to save the generated code
+  
+- **research**:
+  - `depth`: Brief, medium, detailed
+  
+- **command**:
+  - `command`: Shell command to execute
+  
+- **context_summary**:
+  - `limit`: Number of context entries to summarize
 
-- **Database**: The system uses a local SQLite database by default. You can modify the database path in `ai_swarm.py` if needed.
-- **Agents**: The system currently supports basic agents for writing and coding. You can extend this by adding more agents in the `agents` directory.
+## Future Enhancements
 
-### Troubleshooting
-
-- **Database Errors**: Ensure the database file (`contextdb.sqlite`) is not locked or corrupted. Delete the file to reset the database.
-- **Task Processing Issues**: Check if the task type is supported. Only `write`, `code`, and `research` are currently available.
-
-### Contributing
-
-Contributions are welcome! Please fork the repository and submit a pull request with your changes. For major updates, open an issue first to discuss your ideas.
-
----
-
-This project is licensed under the MIT License. See the LICENSE file for details.
+- Web interface for better visualization
+- Concurrent task processing
+- More agent types and specializations
+- Advanced context management with vector databases
+- Integration with external tools and platforms
