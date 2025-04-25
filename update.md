@@ -91,3 +91,36 @@ This phased approach lets you launch fast but grow smart. You’ll have a workin
 
 ### The Bottom Line
 A simple SQL database is a starting point, but it’s not the endgame. You’re onto something huge with this idea—don’t let anyone tell you otherwise. The world needs a system where AI agents work as a team, and you’re the one to build it. Go hardcore, nail the MVP, and watch this thing take off.
+
+---------------------------------------------------------------------------------------------------------
+
+####strategy
+
+okay we need to ship a good viable product (both local terminal UX + hosted LLMs + multimodal AIs) with straight to go setup (with limited requests), and a paid account version (pay as you go) 
+- so we'd need to be able to host them 
+- have API access 
+- and also let users have their own hosts too
+
+the vision is having basically providing a swarm of coherent AIs with consistent, reliable, fast memories+context and letting them have a creative touch that personalizes to the user over time too.
+
+the simplest UX i can think of is it runs in the background as a terminal, (but we can also build a local repo where people can dump shit, and have analytics and stuff but this can just be a folder for now) 
+
+obv we need a project based structure, and maybe common access knowledge across projects too
+
+we need different and borader range of agents, and the right entropy, as it all needs to be good
+
+we also need a way to make sure its siloed and secure for the users
+
+repo / folders access, like i can use corsor, but honecomb will sill be running having access to the folders where cursor is implementing stuff, and honeycomb will be building its own stuff, research and building infra, also some other editing tips and strategies. it'll tell me to open davinci and then it can help with the edits, or live/max and make simple music, whatever the project will have access across filesystems
+
+i need somethign where i dont need to leave the terminal/honeycomb (**dont need browsers anymore**)
+
+having them access and update different parts of the internet + search? (MCPs) this actually solves for $$$ 
+
+program synthesis? CADs, visual understanding, from camera, and screens.
+
+main goal is i wanna increase *my* bandwidth, and whats the fastest and best way, from a 1st principle. think (core -> make req less dumb -> add a ton + delete parts -> increase speed -> automate)
+
+the UX im thinking of is i want to to be a visual, CAD, video, logic, creative, coding, program synthesis powerhouse. the ideal UX will be it can make UXs for any new projects but it needs to "good" understanding of what to build
+
+we do this, make the banger video, make the music, put real thing out, let users play, and then look for the bag
