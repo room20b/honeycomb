@@ -126,6 +126,7 @@ build it -> ship it -> make video -> publish -> tell people & get 100 users
 - *btw do we even need MCPs??? what about modularity* (adding different experts??)
 - **the behaiviour of agents, keeping things fresh and compression the lastes context for these fresh "minds"**
 - **right now terminal is enough so anything that terminal can access**
+- lamma.cpp bruh, we gotta
 
 - gemini for infinite context, so can be used for compression, and understading as the cron "guy"
 - [openai:codex] is cool
